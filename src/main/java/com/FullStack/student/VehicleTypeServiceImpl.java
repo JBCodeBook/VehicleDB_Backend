@@ -29,4 +29,8 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 	public List<VehicleType> getallVehicles() {
 		return vehicleTypeRepository.findAll();
 	}
+
+	@Override
+	public VehicleType findByType(String id) { return vehicleTypeRepository.findByType(id);	}
+
 }

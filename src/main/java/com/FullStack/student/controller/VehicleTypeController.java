@@ -17,11 +17,13 @@ public class VehicleTypeController {
 
 	@GetMapping("/getAll")
 	public List<VehicleType> getallVehicles() {
-
 		return vehicleTypeService.getallVehicles();
 	}
 
-
+	@GetMapping("/getId")
+	public VehicleType getVehicle(@RequestParam String type) {
+		return vehicleTypeService.findByType(type);
+	}
 
 
 }
