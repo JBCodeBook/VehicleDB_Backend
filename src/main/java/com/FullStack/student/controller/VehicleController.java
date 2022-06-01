@@ -5,6 +5,7 @@ import com.FullStack.student.model.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -17,6 +18,12 @@ public class VehicleController {
 
 	@PostMapping("/add")
 	public String add(@RequestBody Vehicle vehicle) {
+		vehicleService.saveVehicle(vehicle);
+		return "New vehicle added";
+	}
+
+	@PutMapping("/add")
+	public String update(@RequestBody Vehicle vehicle) {
 		vehicleService.saveVehicle(vehicle);
 		return "New vehicle added";
 	}

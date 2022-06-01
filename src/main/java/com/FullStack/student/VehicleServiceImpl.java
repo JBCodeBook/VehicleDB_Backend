@@ -5,6 +5,7 @@ import com.FullStack.student.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -16,6 +17,11 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Override
 	public Vehicle saveVehicle(Vehicle vehicle) {
+		return vehicleRepository.save(vehicle);
+	}
+
+	@Override
+	public Vehicle updateVehicle(Vehicle vehicle) {
 		return vehicleRepository.save(vehicle);
 	}
 
